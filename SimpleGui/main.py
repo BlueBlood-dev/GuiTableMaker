@@ -24,7 +24,8 @@ def getStart():
     tk.Button(master=ButtonFrame, relief=tk.RAISED, text='Press me to start', bg='#ff8080', fg='#000099',
                                 width=30, font=('TimesNewRoman', 25), command = throwToTableMenu).pack()
     ButtonFrame.pack(fill = tk.BOTH, side = tk.TOP)
-    ImageFrame = tk.Frame(master=root, relief= tk.FLAT, borderwidth = 70)
+    ImageFrame = tk.Frame(master=root, relief=tk.FLAT,
+                          borderwidth=70, bg='#ffcccc')
     img = ImageTk.PhotoImage(Image.open('heart22.png'))
     tk.Label(master = ImageFrame, image = img ).pack()
     ImageFrame.pack(fill=tk.BOTH, side=tk.TOP)
