@@ -12,7 +12,27 @@ def setGeometry(root):
     root.geometry('+{}+{}'.format(positionRight, positionDown))
 
 def setFrames():
-    pass
+    columnsFrame = tk.Frame(master=root, relief=tk.FLAT,
+                                borderwidth=50, bg='#b3d9ff')
+    tk.Label(master=columnsFrame, bg='#b3d9ff',
+            text='Enter the number of columns:', font=('Gothic', 15)).pack()
+    columnsEntry = tk.Entry(master=columnsFrame, width=10)
+
+    rowsFrame = tk.Frame(master=root, relief=tk.FLAT,
+                        borderwidth=50, bg='#99ccff')
+    tk.Label(master=rowsFrame, bg='#99ccff',
+            text='Enter the number of rows:', font=('Gothic', 15)).pack()
+    rowsEntry = tk.Entry(master=rowsFrame, width=10)
+    columnsFrame.pack(fill=tk.BOTH, side=tk.TOP)
+    columnsEntry.pack(side=tk.LEFT)
+    rowsEntry.pack(side=tk.LEFT)
+    rowsFrame.pack(fill=tk.BOTH, side=tk.TOP)
+    butFrame = tk.Frame(master=root, relief=tk.FLAT,
+                        borderwidth=50, bg='#ffb3d9')
+    theNextButton = tk.Button(
+        master=butFrame, relief=tk.RAISED, text='Next', bg='#ffcce6', height=5)
+    butFrame.pack(side= tk.BOTTOM, fill = tk.BOTH)
+    theNextButton.pack(side=tk.BOTTOM, fill=tk.BOTH)
 
 def getStart():
     root.title('TableMaker')
@@ -44,12 +64,5 @@ def createtest(EventFrame, TextFrame , ImageFrame):
     ImageFrame.destroy()
     root.bind('Key', setFrames())
     root.unbind('<Key>')
-
-
-
-
-def throwToTableMenu():
-    pass
-
 
 getStart()
